@@ -29,7 +29,7 @@ export const BasicLayout = ({ children }: { children: ReactNode }) => {
           <div>
             <a aria-label="CARDANO LIGHTNING" href="/">
               <div className="nx-flex nx-items-center nx-justify-between nx-align-items-center">
-                <div className="nx-mx-3 nx-h-14 nx-w-32 sm:nx-hidden nx-relative">
+                <div className="nx-mr-3 nx-h-14 nx-w-32 sm:nx-hidden nx-relative">
                   <Image src={ logoUrl } alt="CARDANO LIGHTNING" fill />
                 </div>
                 <div className="nx-hidden nx-mx-3 nx-h-14 nx-w-64 sm:nx-block nx-relative">

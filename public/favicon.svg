@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="26.50736mm"
+   height="26.452778mm"
+   viewBox="0 0 18.933829 18.894842"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
+   sodipodi:docname="logos.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.5"
+     inkscape:cx="-1583"
+     inkscape:cy="-1228"
+     inkscape:window-width="1680"
+     inkscape:window-height="1050"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showgrid="false" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(347.35432,466.14156)">
+    <rect
+       style="fill:none;stroke:none;stroke-width:0.271428;stroke-dasharray:none"
+       id="rect31"
+       width="18.93384"
+       height="18.894836"
+       x="-347.35431"
+       y="-466.14154" />
+    <g
+       id="g31"
+       transform="translate(-0.01720539,0.07738869)">
+      <path
+         id="path17"
+         style="font-size:8.46667px;line-height:0.7;font-family:Trueno;-inkscape-font-specification:Trueno;fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:0.295627;stroke-dasharray:none"
+         d="m -340.29826,-465.97688 -2.16191,10.97212 5.69263,-1.46746 -2.7073,8.98437 6.13261,-11.09717 -5.32489,0.072 3.16778,-7.46388 c -1.03558,0.009 -3.76527,0.006 -4.79892,0 z m 4.74523,12.59235 -0.0329,2.2e-4 z"
+         inkscape:export-filename="../public/logo-black.ico"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
+      <path
+         id="path27"
+         style="font-size:8.46667px;line-height:0.7;font-family:Trueno;-inkscape-font-specification:Trueno;fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:0.295627;stroke-dasharray:none"
+         d="m -340.29826,-465.97688 -2.16191,10.97212 2.73699,-0.70711 1.05606,-2.80115 3.16778,-7.46388 c -1.03558,0.009 -3.76527,0.006 -4.79892,0 z"
+         inkscape:export-filename="lightning-icon.svg"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96"
+         sodipodi:nodetypes="cccccsc" />
+      <path
+         style="fill:#000000;stroke:none;stroke-width:0.188988px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m -339.77046,-458.35219 4.06431,-0.0372 -0.67567,1.75694 -4.24898,1.00543 z"
+         id="path30"
+         sodipodi:nodetypes="ccccc" />
+    </g>
+  </g>
+</svg>

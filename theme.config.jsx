@@ -1,5 +1,5 @@
 export default {
-  footer: <p>Cardano Lightning Network</p>,
+  footer: <p>Cardano Lightning</p>,
   head: ({ title, meta }) => (
     <>
       {meta.description && (

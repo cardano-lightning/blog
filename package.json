@@ -31,7 +31,7 @@
   "scripts": {
     "build": "tsup",
     "build:all": "pnpm build && pnpm build:tailwind",
-    "build:tailwind": "pnpm postcss theme/styles.css -o style.css --verbose",
+    "build:tailwind": "pnpm postcss theme/styles.css -o public/style.css --verbose",
     "clean": "rimraf ./dist ./style.css",
     "dev": "concurrently \"pnpm dev:layout\" \"pnpm dev:tailwind\" \"pnpm dev:next\"",
     "dev:layout": "tsup --watch",

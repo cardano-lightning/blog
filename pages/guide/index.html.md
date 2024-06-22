@@ -30,6 +30,6 @@ All these mean faster delivery and adoption.
 
 ## Entires
 
-* [Step 1: From Paper Cheque to Off-Chain transaction](/guide/01)
+* [Step 1: From Paper Cheque to Off-Chain transaction](/guide/01.html)
 
 

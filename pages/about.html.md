@@ -3,15 +3,15 @@ title: About
 type: page
 ---
 
-## Vision 
+## Vision
 
 The Cardano Lightning initiative wants to bring the power of [lightning](https://lightning.network/) to Cardano.
 
-## Story 
+## Story
 
 The initial team met at the excellent [Cardano Buidler Fest #1](https://buidl.2024.cardano.org/).
 They had a shared prior interest in tailoring L2s to meet specific use cases
-with[subbit.xyz](https://subbit.xyz) and [Marlowe](https://marlowe.iohk.io/) signed inputs.
+with [subbit.xyz](https://subbit.xyz) and [Marlowe](https://marlowe.iohk.io/) signed inputs.
 
 Over beers and burger, Cardano Lightning was born.
 
@@ -35,6 +35,6 @@ Over beers and burger, Cardano Lightning was born.
 + Cardano experience: More than 3 years. Delivered on Cardano Mainnet: ICO Mechanism, an audited Smart Contract for World Mobile. Member of Marlowe Team.
 + Profiles: [Github](https://github.com/nhenin) [LinkedIn](https://www.linkedin.com/in/nhenin/) 
 
-## Contact 
+## Contact
 
 Reach us on [Twitter](https://twitter.com/CardanoLightnin).

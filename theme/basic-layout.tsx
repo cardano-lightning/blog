@@ -32,7 +32,11 @@ export const BasicLayout = ({ children }: { children: ReactNode }) => {
                 <div className="nx-mr-3 nx-h-14 nx-w-14 sm:nx-hidden nx-relative">
                   <Image src={ logoUrl } alt="CARDANO LIGHTNING" fill />
                 </div>
+<<<<<<< Updated upstream
                 <div className="nx-hidden nx-mx-3 nx-h-14 nx-w-16 sm:nx-block nx-relative">
+=======
+                <div className="nx-hidden nx-mr-3 nx-h-14 nx-w-64 sm:nx-block nx-relative">
+>>>>>>> Stashed changes
                   <Image src={ imageUrl } alt="CARDANO LIGHTNING" fill />
                 </div>
               </div>
@@ -41,7 +45,7 @@ export const BasicLayout = ({ children }: { children: ReactNode }) => {
           <Nav />
         </header>
         <main className="nx-mb-auto">
-          <article className="nx-prose max-md:nx-prose-sm dark:nx-prose-dark nx-pt-10" dir="ltr"
+          <article className="nx-prose max-md:nx-prose-sm dark:nx-prose-dark nx-pt-10 nx-max-w-3xl" dir="ltr"
           >
             <Head>
               <title>{title}</title>

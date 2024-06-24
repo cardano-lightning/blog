@@ -17,7 +17,7 @@ export default function Nav(): ReactElement {
             return (
               <span
                 key={page.route}
-                className="nx-cursor-default dark:nx-text-gray-400 nx-text-gray-600"
+                className="nx-cursor-default dark:nx-text-white nx-text-black nx-font-bold"
               >
                 {name}
               </span>
@@ -25,7 +25,7 @@ export default function Nav(): ReactElement {
           }
           return (
             <Link key={page.route} href={page.route} passHref legacyBehavior>
-              <a>{name}</a>
+              <a className="dark:nx-text-gray-400 nx-text-gray-400  nx-font-bold">{name}</a>
             </Link>
           )
         })}

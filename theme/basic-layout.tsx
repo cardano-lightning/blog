@@ -16,11 +16,9 @@ export const BasicLayout = ({ children }: { children: ReactNode }) => {
 
   const { theme } = useTheme();
 
-  let imageUrl = config.logos.light.big;
-  let logoUrl = config.logos.light.small;
+  let logoUrl = config.logos.light;
   if (theme === "dark") {
-    imageUrl = config.logos.dark.big;
-    logoUrl = config.logos.dark.small;
+    logoUrl = config.logos.dark;
   }
   return (
     <section className="nx-mx-auto nx-max-w-3xl nx-px-4 sm:px-6 xl:nx-max-w-5xl xl:nx-px-0">
@@ -28,13 +26,11 @@ export const BasicLayout = ({ children }: { children: ReactNode }) => {
         <header className="nx-flex nx-items-center nx-justify-between nx-py-1">
           <div>
             <a aria-label="CARDANO LIGHTNING" href="/">
-              <div className="nx-flex nx-items-center nx-justify-between nx-align-items-center">
-                <div className="nx-mr-3 nx-h-14 nx-w-14 sm:nx-hidden nx-relative">
+              <div className="nx-flex nx-items-start nx-justify-between nx-align-items-center">
+                <div className="nx-mr-3 nx-h-14 nx-w-14 nx-relative">
                   <Image src={ logoUrl } alt="CARDANO LIGHTNING" fill />
                 </div>
-                <div className="nx-hidden nx-mr-3 nx-h-14 nx-w-16 sm:nx-block nx-relative">
-                  <Image src={ imageUrl } alt="CARDANO LIGHTNING" fill />
-                </div>
+                <div className="nx-hidden sm:nx-inline-block nx-relative nx-font-cardano nx-align-bottom">CARDANO LIGHTNING</div>
               </div>
             </a>
           </div>
@@ -48,9 +44,6 @@ export const BasicLayout = ({ children }: { children: ReactNode }) => {
               {config.head?.({ title, meta: opts.frontMatter })}
             </Head>
             <HeadingContext.Provider value={ref}>
-              {opts.hasJsxInH1 ? <h1 ref={ref} /> : null}
-              {opts.hasJsxInH1 ? null : <h1 className="nx-font-cardano nx-text-neutral-700">{opts.title}</h1>}
-              {opts.frontMatter.description && <p className="nx-text-xl nx-text-gray-500 nx-italic">{opts.frontMatter.description}</p>}
               {children}
             </HeadingContext.Provider>
           </article>

@@ -3,8 +3,6 @@ import { useRouter } from 'next/router'
 import type { ReactElement, ReactNode } from 'react'
 import { BasicLayout } from './basic-layout'
 import { useBlogContext } from './blog-context'
-import { MDXTheme } from './mdx-theme'
-import Nav from './nav'
 import { collectPostsAndNavs } from './utils/collect'
 import getTags from './utils/get-tags'
 
@@ -36,12 +34,12 @@ export function PostsLayout({
     const description = post.frontMatter?.description
 
     return (
-      <div key={post.route} className="post-item">
-        <h3>
+      <div key={post.route} className="post-item nx-mb-16">
+        <h2 className="nx-mt-0 nx-text-2xl">
           <Link href={post.route} passHref legacyBehavior>
-            <a className="!nx-no-underline">{postTitle}</a>
+            <a className="!nx-no-underline nx-font-bold">{postTitle}</a>
           </Link>
-        </h3>
+        </h2>
         {description && (
           <p className="nx-mb-2 dark:nx-text-gray-400 nx-text-gray-600 nx-italic">
             {description}

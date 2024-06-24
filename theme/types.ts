@@ -3,11 +3,6 @@ import type { PageOpts } from 'nextra'
 import type { Components } from 'nextra/mdx'
 import type { ReactNode } from 'react'
 
-type Logos = {
-  big: string,
-  small: string
-}
-
 //  logo: {
 //    dark: {
 //      big: "/full-white.svg",
@@ -37,8 +32,8 @@ export interface NextraBlogTheme {
     title: string
   }) => ReactNode
   logos?: {
-    dark: Logos,
-    light: Logos
+    dark: string,
+    light: string
   },
   navs?: {
     name: string

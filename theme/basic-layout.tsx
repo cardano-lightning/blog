@@ -30,7 +30,6 @@ export const BasicLayout = ({ children }: { children: ReactNode }) => {
                 <div className="nx-mr-3 nx-h-14 nx-w-14 nx-relative">
                   <Image src={ logoUrl } alt="CARDANO LIGHTNING" fill />
                 </div>
-                <div className="nx-hidden sm:nx-inline-block nx-relative nx-font-cardano nx-align-bottom">CARDANO LIGHTNING</div>
               </div>
             </a>
           </div>

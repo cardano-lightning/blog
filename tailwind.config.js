@@ -16,7 +16,8 @@ export default {
   content: [
     "./theme/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}"
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./theme.config.jsx"
   ],
   theme: {
     colors: {

@@ -36,7 +36,7 @@ export const BasicLayout = ({ children }: { children: ReactNode }) => {
           <Nav />
         </header>
         <main className="nx-mb-auto">
-          <article className="nx-prose max-md:nx-prose-sm dark:nx-prose-dark nx-pt-10 nx-max-w-3xl" dir="ltr"
+          <article className="nx-prose max-md:nx-prose-sm dark:nx-prose-dark nx-pt-10 nx-max-w-3xl nx-pb-2" dir="ltr"
           >
             <Head>
               <title>{title}</title>

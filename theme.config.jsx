@@ -2,10 +2,10 @@ export default {
   // Not sure why nx-mr-4 is not working and I was froced to use carazy style property
   footer:
     <div className="nx-flex nx-items-center nx-space-x-4">
-      <a href="https://twitter.com/CardanoLightnin" class="hover:nx-text-blue-400" style={{"margin-right": "1rem"}}>
+      <a href="https://twitter.com/CardanoLightnin" class="hover:nx-text-blue-400" target="_blank">
         <i className="fab fa-twitter fa-lg"></i>
       </a>
-      <a href="https://github.com/cardano-lightning" class="hover:nx-text-gray-400">
+      <a href="https://github.com/cardano-lightning" class="hover:nx-text-gray-400" target="_blank">
         <i className="fab fa-github fa-lg"></i>
       </a>
     </div>,

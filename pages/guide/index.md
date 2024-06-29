@@ -2,7 +2,6 @@
 title: Baby Steps Guide to Cardano Lightning Network
 description: Illustrated introduction to the main concepts of CLN
 date: 2024/06/02
-tag: guide
 author: paluh
 ---
 

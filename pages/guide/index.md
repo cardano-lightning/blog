@@ -17,6 +17,6 @@ At the same time we want to show how simple, **portable** and **lightweight** th
 
 ## Entires
 
-* [Step 1: From Paper Cheque to Off-Chain transaction](/guide/01.html)
+* [Step 1: From Paper Cheque to Off-Chain transaction](/guide/01)
 
 

@@ -1,7 +1,7 @@
 const withNextra = require('nextra')({
   // theme: 'nextra-theme-blog',
   theme: './theme/index.tsx',
-  themeConfig: './theme.config.jsx'
+  themeConfig: './theme.config.jsx',
 })
 
 module.exports = withNextra({
@@ -9,4 +9,5 @@ module.exports = withNextra({
     unoptimized: true
   },
   output: 'export',
+  trailingSlash: true,
 });

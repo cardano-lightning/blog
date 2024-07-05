@@ -40,10 +40,11 @@
             name = "carano-lightning-network-blog";
             packages = with pkgs; [
               nodejs
-              pkgs.nodePackages.pnpm
-              pkgs.html-tidy
-              pkgs.nodePackages.typescript
-              pkgs.nodePackages.typescript-language-server
+              html-tidy
+              nodePackages.pnpm
+              nodePackages.typescript
+              nodePackages.typescript-language-server
+              python3Packages.pypdf2
             ];
           };
         };

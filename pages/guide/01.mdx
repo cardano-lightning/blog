@@ -39,7 +39,7 @@ In the case of Bitcoin, because of scripting limitations, they implemented a sop
 
 In Cardano, channels are guarded by smart contracts and in a single cash-out round only a single cash-out event is possible (in a uni-directional channel). In Cardano, we can ensure that only the "recipient" (waiter in this case) can submit and cash out the cheque. So naturally, it is in the best interest of the waiter to cash out the largest one. In other words, in CL when we issue a new cheque, we add up the amounts from the previous cheque and the new one and issue a single digital cheque for the total amount. This way we can avoid the complicated cheque revocation mechanism entirely and make cheques even public. The waiter (or any user of CL) can back them up safely even in non-safe and public storage!
 
-One additional similarity between paper and digital cheques is that they are **instant** (you don't have to check the blockchain for confirmation, or state updates frequently etc.). So they can be used for regular payments but also for only micro-payments or for "pay as you go" channels.
+One additional similarity between paper and digital cheques is that they are **instant** (you don't have to check the blockchain for confirmation, or state updates frequently etc.). So they can be used for regular payments but also for micropayments or for "pay as you go" online channels.
 
 But let's go back to the restaurant. After all this delicious meal, you are ready to leave... but you are still a bit thirsty.
 
@@ -61,7 +61,7 @@ This analogy translates nearly directly to our digital cheques. Every cheque is 
 
 Additionally, the cash-out of the cheque can be understood from a blockchain perspective as a real transaction. All the previous steps were conducted off-chain in some sense. So in this particular case, we compressed three transactions (main dish, ice cream, and wine payments) into a single one on the L1. All those subtransactions were fully secured and **instant**. But still - it is not a really huge achievement given that in real CL there is also an extra preparation transaction needed. But please be patient - this is just the first step!
 
-But let's go back to the bank. After preliminary verification of the cheque, the cashier discovers that your account in the bank is empty. So he can't cash out the cheque!
+Let's go back to the bank for a moment. After preliminary verification of the cheque, the cashier discovers that your account in the bank is empty. So he can't cash out the cheque!
 
 ![Characters](./01/11.svg)
 
@@ -73,6 +73,7 @@ In the case of CL, this situation is impossible because the funds are locked in 
 
 ## Stay Tuned
 
-So in this installment, we introduced the concept of digital cheques and a single direction channel. I hope that you were able to follow and that the analogy clarified the main idea rather than confused you. We have many more interesting topics to discuss because a single and unidirectional channel is not really useful. An easy and practical addition could be at least a payback capability so probably we will discuss that in the next episode. But there are even more interesting topics like how I can use your restaurant channel when we visit this restaurant together and I don't want to set it up directly.
-Stay tuned for the next episode!
+So in this installment, we introduced the concept of digital cheques and a single direction channel. I hope that you were able to follow and that the analogy clarified the main idea rather than confused you.
+
+We have many more interesting topics to discuss because a single and unidirectional channel is not really useful. An easy and practical addition could be at least a payback capability so probably we will discuss that in the next episode. So please stay tuned!
 

@@ -11,7 +11,7 @@ import { useTheme } from 'next-themes'
 
 export const BasicLayout = ({ children }: { children: ReactNode }) => {
   const { config, opts } = useBlogContext()
-  const title = `${opts.title}${config.titleSuffix || ''}`
+  const title = `${config?.title?.prefix || '' }${opts.title}${config?.title?.suffix || ''}`
   const ref = useRef<HTMLHeadingElement>(null)
 
   const { theme } = useTheme();

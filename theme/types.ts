@@ -41,7 +41,10 @@ export interface NextraBlogTheme {
   }[]
   postFooter?: string
   readMore?: string
-  titleSuffix?: string
+  title?: {
+    prefix?: string,
+    suffix?: string,
+  }
 }
 // lets extend PageOpts<BlogFrontMatter> with subitles
 export type BlogPageOpts = PageOpts<BlogFrontMatter> & { subtitle?: string }

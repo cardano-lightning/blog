@@ -27,7 +27,10 @@ export default {
   readMore: 'Read More →',
   postFooter: null,
   darkMode: true,
-  navs: []
+  navs: [],
+  title: {
+    prefix: "CL | "
+  }
   //   {
   //     url: 'https://github.com/shuding/nextra',
   //     name: 'Nextra'

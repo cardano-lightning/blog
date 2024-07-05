@@ -25,19 +25,21 @@ But ice cream is so tempting... so you decide to stay and order one.
 
 ![Characters](./01/04.svg)
 
-You wrote a cheque for *$30* and when you were about to give it to the waiter, he explains that the cashier at the local bank cannot add up the amounts from multiple cheques. He just can't.
+You wrote a new *$15* cheque for the dessert and when you were about to give it to the waiter, he explains that the cashier at the local bank cannot add up the amounts from multiple cheques. He just can't.
 
 ![Characters](./01/05.svg)
 
-So the waiter asks you to write a cheque for the total amount of the meal, meaning the previous dish and the ice cream. You agree to do that and write a cheque for *$45*. You give him the cheque for *$45* and he gives you back the cheque for *$30*.
+So the waiter asks you to write a cheque for the total amount of the meal, meaning the previous dish and the ice cream. You agree to do that. So he gives you the last cheque and you correct it so it is now for *$45*.
 
 ![Characters](./01/06.svg)
 
-This is nearly how digital cheques work in the blockchain world as well. What is **really** important is they are **instant** (you don't have to even check the blockchain confirmation etc.) and safe.
+This is nearly how digital cheques work in the blockchain world as well. In the digital world we can not really overwrite amount on the old one - once it was issued it can be easily copied etc. What we only can do is we can just create another cheque for the higher amount and make the old one for lower amount naturally obsolete and we make it obsolete by simple incentive mechanism.
 
-Digging a bit deeper, in the case of Bitcoin, because of scripting limitations, they implemented a sophisticated old cheque revocation mechanism so you cannot submit the previous *$30* cheque yourself to the blockchain. This was necessary in Bitcoin because parties exchange real transactions between themselves! In Cardano, we can do it much, much simpler because of the smart contracts capabilities.
+In the case of Bitcoin, because of scripting limitations, they implemented a sophisticated old cheque revocation mechanism so you cannot submit the previous *$30* cheque yourself to the blockchain quickly before waiter submits the last one for *$45* without being penlized. This was necessary in Bitcoin because parties exchange real transactions between themselves! In Cardano, we can make this protocol much, much simpler because of our smart contracts capabilities.
 
 In Cardano, channels are guarded by smart contracts and in a single cash-out round only a single cash-out event is possible (in a uni-directional channel). In Cardano, we can ensure that only the "recipient" (waiter in this case) can submit and cash out the cheque. So naturally, it is in the best interest of the waiter to cash out the largest one. In other words, in CL when we issue a new cheque, we add up the amounts from the previous cheque and the new one and issue a single digital cheque for the total amount. This way we can avoid the complicated cheque revocation mechanism entirely and make cheques even public. The waiter (or any user of CL) can back them up safely even in non-safe and public storage!
+
+One additional similarity between paper and digital cheques is that they are **instant** (you don't have to check the blockchain for confirmation, or state updates frequently etc.). So they can be used for regular payments but also for only micro-payments or for "pay as you go" channels.
 
 But let's go back to the restaurant. After all this delicious meal, you are ready to leave... but you are still a bit thirsty.
 

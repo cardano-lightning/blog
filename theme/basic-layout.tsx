@@ -5,21 +5,12 @@ import { useBlogContext } from './blog-context'
 import { HeadingContext } from './mdx-theme'
 
 import Image from 'next/image'
-import ThemeSwitch from './theme-switch'
 import Nav from './nav'
-import { useTheme } from 'next-themes'
 
 export const BasicLayout = ({ children }: { children: ReactNode }) => {
   const { config, opts } = useBlogContext()
   const title = `${config?.title?.prefix || '' }${opts.title}${config?.title?.suffix || ''}`
   const ref = useRef<HTMLHeadingElement>(null)
-
-  const { theme } = useTheme();
-
-  let logoUrl = config.logos.light;
-  if (theme === "dark") {
-    logoUrl = config.logos.dark;
-  }
   return (
     <section className="nx-mx-auto nx-max-w-3xl nx-px-4 sm:px-6 xl:nx-max-w-5xl xl:nx-px-0">
       <div className="nx-flex nx-h-screen nx-flex-col nx-justify-between nx-font-sans">
@@ -28,7 +19,9 @@ export const BasicLayout = ({ children }: { children: ReactNode }) => {
             <a aria-label="CARDANO LIGHTNING" href="/">
               <div className="nx-flex nx-items-start nx-justify-between nx-align-items-center">
                 <div className="nx-mr-3 nx-h-14 nx-w-14 nx-relative">
-                  <Image src={ logoUrl } alt="CARDANO LIGHTNING" fill />
+                  {/* CSS is more reliable than theme checking like `if (theme === "dark") { logoUrl =.. } */}
+                  <Image src={ config.logos.dark } alt="CARDANO LIGHTNING" fill className="nx-hidden dark:nx-block" />
+                  <Image src={ config.logos.light } alt="CARDANO LIGHTNING" fill className="nx-block dark:nx-hidden" />
                 </div>
               </div>
             </a>

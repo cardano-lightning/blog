@@ -12,9 +12,19 @@ type: page
 
 + Highly scalable 
 
-## Catalyst Proposal
+## Catalyst Proposals
 
-Vote for us [here](https://cardano.ideascale.com/c/idea/122403)
+Cardano Lightning will be running in clouds:
+
+Vote for our proposals: 
+
+- [Calvus - The Gateway Node][calvus]
+- [Cirrus - A Mobile First Cardano Lightning App and Node][cirrus]
+- [Stratus - The Merchant Node and SDK][stratus]
+
+[calvus]: https://cardano.ideascale.com/c/cardano/idea/131334
+[cirrus]: https://cardano.ideascale.com/c/cardano/idea/131332
+[stratus]: https://cardano.ideascale.com/c/cardano/idea/131329
 
 ## How it works
 

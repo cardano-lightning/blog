@@ -1,5 +1,4 @@
 ---
-
 title: "Bitcoin Lightning Channel Design. What Can We Learn from It?"
 date: 2024/11/12
 description: "A closer look at Bitcoin and its Lightning solution in the context of Cardano Lightning."

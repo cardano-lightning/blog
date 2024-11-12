@@ -1,5 +1,4 @@
 ---
-
 title: "Step 1: From Paper Cheques to Off-Chain Transactions"
 date: 2024/06/29
 description: "Old is New Again: Signing Cheques in the Blockchain Era."
@@ -12,62 +11,62 @@ Let's use the traditional paper cheque analogy with some small twists to explain
 So let me introduce the characters in this story:
 
 <div className="nx-block dark:nx-hidden">
-![Characters](./01/01.svg)
+![Characters](./01.svg)
 </div>
 
 <div className="nx-hidden dark:nx-block">
-![Characters](./01/dark-mode/01.svg)
+![Characters](./dark-mode/01.svg)
 </div>
 
 
 You just received your meal and pay for it right away - you don't want to owe anything to anyone ;-) You sign a cheque for *$30*. This flow translates nicely to Cardano Lightning because digital cheques support custom currencies too, so you can easily issue a cheque for *$30* in your favorite stable coin!
 
 <div className="nx-block dark:nx-hidden">
-![Main Dish](./01/02.svg)
+![Main Dish](./02.svg)
 </div>
 
 <div className="nx-hidden dark:nx-block">
-![Main Dish](./01/dark-mode/02.svg)
+![Main Dish](./dark-mode/02.svg)
 </div>
 
 After the main dish, you should leave because you know that sugar is bad for you...
 
 <div className="nx-block dark:nx-hidden">
-![Sugar Craving](./01/03.svg)
+![Sugar Craving](./03.svg)
 </div>
 
 <div className="nx-hidden dark:nx-block">
-![Sugar Craving](./01/dark-mode/03.svg)
+![Sugar Craving](./dark-mode/03.svg)
 </div>
 
 But ice cream is so tempting... so you decide to stay and order one.
 
 <div className="nx-block dark:nx-hidden">
-![Dessert](./01/04.svg)
+![Dessert](./04.svg)
 </div>
 
 <div className="nx-hidden dark:nx-block">
-![Dessert](./01/dark-mode/04.svg)
+![Dessert](./dark-mode/04.svg)
 </div>
 
 You wrote a new *$15* cheque for the dessert and when you were about to give it to the waiter, he explains that the cashier at the local bank cannot add up the amounts from multiple cheques. He just can't.
 
 <div className="nx-block dark:nx-hidden">
-![Cashier Story](./01/05.svg)
+![Cashier Story](./05.svg)
 </div>
 
 <div className="nx-hidden dark:nx-block">
-![Cashier Story](./01/dark-mode/05.svg)
+![Cashier Story](./dark-mode/05.svg)
 </div>
 
 So the waiter asks you to write a cheque for the total amount of the meal, meaning the previous dish and the ice cream. You agree to do that. So he gives you the last cheque and you correct it so it is now for *$45*.
 
 <div className="nx-block dark:nx-hidden">
-![Cheque Update](./01/06.svg)
+![Cheque Update](./06.svg)
 </div>
 
 <div className="nx-hidden dark:nx-block">
-![Cheque Update](./01/dark-mode/06.svg)
+![Cheque Update](./dark-mode/06.svg)
 </div>
 
 This is nearly how digital cheques work in the blockchain world as well. In the digital world we can not really overwrite amount on the old one - once it was issued it can be easily copied etc. What we only can do is we can just create another cheque for the higher amount and make the old one for lower amount naturally obsolete and we make it obsolete by simple incentive mechanism.
@@ -81,41 +80,41 @@ One additional similarity between paper and digital cheques is that they are **i
 But let's go back to the restaurant. After all this delicious meal, you are ready to leave... but you are still a bit thirsty.
 
 <div className="nx-block dark:nx-hidden">
-![Wine Craving](./01/07.svg)
+![Wine Craving](./07.svg)
 </div>
 
 <div className="nx-hidden dark:nx-block">
-![Wine Craving](./01/dark-mode/07.svg)
+![Wine Craving](./dark-mode/07.svg)
 </div>
 
 So you order a "little" bottle of wine :-P
 
 <div className="nx-block dark:nx-hidden">
-![Wine](./01/08.svg)
+![Wine](./08.svg)
 </div>
 
 <div className="nx-hidden dark:nx-block">
-![Wine](./01/dark-mode/08.svg)
+![Wine](./dark-mode/08.svg)
 </div>
 
 And you bump the total amount to $60.
 
 <div className="nx-block dark:nx-hidden">
-![Cheque Update](./01/09.svg)
+![Cheque Update](./09.svg)
 </div>
 
 <div className="nx-hidden dark:nx-block">
-![Cheque Update](./01/dark-mode/09.svg)
+![Cheque Update](./dark-mode/09.svg)
 </div>
 
 The next day, the waiter goes to the bank with the cheque you gave him. He passes the cheque to the cashier and the cashier checks the signature and the amount.
 
 <div className="nx-block dark:nx-hidden">
-![Cheque Verification](./01/10.svg)
+![Cheque Verification](./10.svg)
 </div>
 
 <div className="nx-hidden dark:nx-block">
-![Cheque Verification](./01/dark-mode/10.svg)
+![Cheque Verification](./dark-mode/10.svg)
 </div>
 
 This analogy translates nearly directly to our digital cheques. Every cheque is just an amount, currency, and a signature. It will contain a small extra piece of information for which round in which channel it was issued, but this is a tiny detail. What is **really important** is that cheques themselves can be easily constructed or verified by everybody - `JavaScript` browser DApp, `Swift` or `Kotlin` mobile DApp, or `Aiken` smart contract on the chain which guards the assets. Portability and simplicity which drive adoption is **the key** here.
@@ -125,21 +124,21 @@ Additionally, the cash-out of the cheque can be understood from a blockchain per
 Let's go back to the bank for a moment. After preliminary verification of the cheque, the cashier discovers that your account in the bank is empty. So he can't cash out the cheque!
 
 <div className="nx-block dark:nx-hidden">
-![Unhappy End](./01/11.svg)
+![Unhappy End](./11.svg)
 </div>
 
 <div className="nx-hidden dark:nx-block">
-![Unhappy End](./01/dark-mode/11.svg)
+![Unhappy End](./dark-mode/11.svg)
 </div>
 
 You cheated this poor waiter! You are a bad person! You should be ashamed of yourself!
 
 <div className="nx-block dark:nx-hidden">
-![Unhappy End](./01/12.svg)
+![Unhappy End](./12.svg)
 </div>
 
 <div className="nx-hidden dark:nx-block">
-![Unhappy End](./01/dark-mode/12.svg)
+![Unhappy End](./dark-mode/12.svg)
 </div>
 
 In the case of CL, this situation is impossible because the funds are locked in the smart contract and both you and the waiter are aware of the maximum amount that can be cashed out. So the waiter will never accept a cheque that he can't cash out!

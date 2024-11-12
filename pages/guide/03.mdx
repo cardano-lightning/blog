@@ -1,6 +1,7 @@
 ---
 title: "Step 2: Can I Pay You Back?"
 date: 2024/07/07
+draft: true
 description: "How to send assets both ways through a single channel."
 author: paluh
 ---
@@ -12,81 +13,81 @@ If you are new to the topic of bidirectional channels then the transfering asset
 Let's once again visit the restaurant:
 
 <div className="nx-block dark:nx-hidden">
-![Characters](./02/01.svg)
+![Characters](./03/01.svg)
 </div>
 
 You probably spotted a new character in our group. We have *Payment Channel Smart Contract* here because we actually want to use CL for the payment flow right from the beginning. Another new piece on our story cover is "Cardano Blockchain" - all the assets and our Smart Contaract will live there.
 
 Before you can start paying instantly in the restaurant you have to open up a channel and lock some funds in it. These money is still yours and could be cashed out by you. When you start issuing cheques you will start losing part of the ownership of that sum and giving it to the restaurant. Charging is simple in this case - you can either coordinate this operation with the recipient directly or the restaurant could provide payment details on their web page. Information needed for the channel opening is an address and optionally separate signing information of the recipient. Charging can sometimes involve more coordination and require multisig transaction when both parties want to lock some funds in their corresponding "channel accounts". In this case we are the only one interested in fund locking.
 
-![Characters](./02/02.1.svg)
+![Characters](./03/02.1.svg)
 
 *Let me repeat that once again - we are still focusing here on the besic mechanics of a *single channel* and we ignore channel chaining. That is why you have to open up a separate channel directly to the restaurant. Channel chaining will significantly impact the flow as you could open up a channel to a Payment Gateway which could connect you to many, many resturants or merchants at once. But this will be the topic of the next installment.*
 
 After receiving money 
 
-![Characters](./02/02.2.svg)
+![Characters](./03/02.2.svg)
 
 Let's use the traditional paper cheque analogy with some small twists to explain the main idea behind digital catcheques.
 
-![Characters](./02/03.svg)
+![Characters](./03/03.svg)
 
 In Restaurant - first cheque:
 
-![Characters](./02/04.svg)
+![Characters](./03/04.svg)
 
 In Restaurant - verifying channel:
 
-![Characters](./02/05.svg)
+![Characters](./03/05.svg)
 
 In Restaurant - channel verified:
 
-![Characters](./02/06.svg)
+![Characters](./03/06.svg)
 
 Main dish:
 
-![Characters](./02/07.svg)
+![Characters](./03/07.svg)
 
 Dessert:
 
-![Characters](./02/08.svg)
+![Characters](./03/08.svg)
 
 Wine:
 
-![Characters](./02/09.svg)
+![Characters](./03/09.svg)
 
 Alcohol?:
 
-![Characters](./02/10.svg)
+![Characters](./03/10.svg)
 
 Alcohol back:
 
-![Characters](./02/11.svg)
+![Characters](./03/11.svg)
 
 Payback:
 
-![Characters](./02/12.svg)
+![Characters](./03/12.svg)
 
 On chain state:
 
-![Characters](./02/13.svg)
+![Characters](./03/13.svg)
 
 First cheque submission:
 
-![Characters](./02/14.svg)
+![Characters](./03/14.svg)
 
 Second cheque submission:
 
-![Characters](./02/15.svg)
+![Characters](./03/15.svg)
 
 On chain state:
 
-![Characters](./02/16.svg)
+![Characters](./03/16.svg)
 
 Multisig:
 
-![Characters](./02/17.svg)
+![Characters](./03/17.svg)
 
 Round closing cheque:
 
-![Characters](./02/18.svg)
+![Characters](./03/18.svg)

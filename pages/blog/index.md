@@ -2,4 +2,3 @@
 title: Blog
 type: posts
 ---
-

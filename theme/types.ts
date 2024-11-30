@@ -1,7 +1,7 @@
 /* eslint typescript-sort-keys/interface: error */
-import type { PageOpts } from 'nextra'
-import type { Components } from 'nextra/mdx'
-import type { ReactNode } from 'react'
+import type { PageOpts } from "nextra";
+import type { Components } from "nextra/mdx";
+import type { ReactNode } from "react";
 
 //  logo: {
 //    dark: {
@@ -14,52 +14,52 @@ import type { ReactNode } from 'react'
 //    }
 //  },
 export interface NextraBlogTheme {
-  comments?: ReactNode
-  components?: Components
+  comments?: ReactNode;
+  components?: Components;
   cusdis?: {
-    appId: string
-    host?: string
-    lang: string
-  }
-  darkMode?: boolean
-  dateFormatter?: (date: Date) => string
-  footer?: ReactNode
+    appId: string;
+    host?: string;
+    lang: string;
+  };
+  darkMode?: boolean;
+  dateFormatter?: (date: Date) => string;
+  footer?: ReactNode;
   head?: ({
     meta,
-    title
+    title,
   }: {
-    meta: Record<string, any>
-    title: string
-  }) => ReactNode
+    meta: Record<string, any>;
+    title: string;
+  }) => ReactNode;
   logos?: {
-    dark: string,
-    light: string
-  },
+    dark: string;
+    light: string;
+  };
   navs?: {
-    name: string
-    url: string
-  }[]
-  postFooter?: string
-  readMore?: string
+    name: string;
+    url: string;
+  }[];
+  postFooter?: string;
+  readMore?: string;
   title?: {
-    prefix?: string,
-    suffix?: string,
-  }
+    prefix?: string;
+    suffix?: string;
+  };
 }
 // lets extend PageOpts<BlogFrontMatter> with subitles
-export type BlogPageOpts = PageOpts<BlogFrontMatter> & { subtitle?: string }
+export type BlogPageOpts = PageOpts<BlogFrontMatter> & { subtitle?: string };
 
 export type BlogFrontMatter = {
-  author?: string
-  back?: string
-  date?: string
-  description?: string
-  tag?: string | string[]
-  title?: string
-  type?: 'post' | 'page' | 'posts' | 'tag'
-}
+  author?: string;
+  back?: string;
+  date?: string;
+  description?: string;
+  tag?: string | string[];
+  title?: string;
+  type?: "post" | "page" | "posts" | "tag";
+};
 
 export interface LayoutProps {
-  config: NextraBlogTheme
-  opts: BlogPageOpts
+  config: NextraBlogTheme;
+  opts: BlogPageOpts;
 }

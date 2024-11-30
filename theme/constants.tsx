@@ -1,5 +1,5 @@
 /* eslint sort-keys: error */
-import type { NextraBlogTheme } from './types'
+import type { NextraBlogTheme } from "./types";
 
 export const DEFAULT_THEME: NextraBlogTheme = {
   // footer: (
@@ -7,5 +7,5 @@ export const DEFAULT_THEME: NextraBlogTheme = {
   //     CC BY-NC 4.0 {new Date().getFullYear()} © Shu Ding.
   //   </small>
   // ),
-  readMore: 'Read More →'
-}
+  readMore: "Read More →",
+};

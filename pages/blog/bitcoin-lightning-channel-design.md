@@ -1,7 +1,9 @@
 ---
 title: "Bitcoin Lightning Channel Design. What Can We Learn from It?"
 date: 2024/11/12
-description: "A closer look at Bitcoin and its Lightning solution in the context of Cardano Lightning."
+description:
+  "A closer look at Bitcoin and its Lightning solution in the context of Cardano
+  Lightning."
 author: paluh, waalge
 ---
 
@@ -64,10 +66,10 @@ offers nearly instant finality.
 ### 2.2 The Contract
 
 BL uses a 2-of-2 multisig script to lock funds on the Bitcoin ledger -
-functionality supported in Bitcoin Script. Bitcoin Script can check only signatures
-against the current transaction, not an arbitrary piece of data. The limited
-capabilities of Bitcoin Script surely restricted the design choice available to
-lock and represent transfer of funds.
+functionality supported in Bitcoin Script. Bitcoin Script can check only
+signatures against the current transaction, not an arbitrary piece of data. The
+limited capabilities of Bitcoin Script surely restricted the design choice
+available to lock and represent transfer of funds.
 
 A key aspect of the BLN protocol is the management of partially signed
 commitment transactions. If a party wishes to close the channel, they can
@@ -154,8 +156,10 @@ because it affects if and how big payment can be routed through the network
 without the need for splitting and transferring it using much more involved
 multi path payment.
 
-Cardano is (generally) faster and cheaper than Bitcoin. Thus, to match BLN on cost and speed, CL may not need to pay the same level of priority to tx fee optimization. At the baseline protocol level we probably don't have to necessarily compresses every channel L1 operation into a single
-transaction.
+Cardano is (generally) faster and cheaper than Bitcoin. Thus, to match BLN on
+cost and speed, CL may not need to pay the same level of priority to tx fee
+optimization. At the baseline protocol level we probably don't have to
+necessarily compresses every channel L1 operation into a single transaction.
 
 We can of course enable more efficient execution strategies based on muti-sig
 transactions and rely as BLN on a full off-chain consensus bewteen partners. As
@@ -164,8 +168,8 @@ inflexibility which can lead to actually more transactions in many contexts!
 
 #### 3.1.3 Lightning Payment Finality
 
-While the discussion above relates to Layer 1 finality, it's important to
-note that once a Lightning Channel is established payments exectued on that layer
+While the discussion above relates to Layer 1 finality, it's important to note
+that once a Lightning Channel is established payments exectued on that layer
 achieve nearly instant payment finality. Successful payment paths ensure that
 transactions are finalized predominantly by network speed.
 
@@ -545,9 +549,10 @@ Paraphrasing the benefits listed in the Eltoo paper [^5]:
 
 On Cardano Lightning, the unique capabilities of the platform could support an
 alternative approach that avoids the traditional penalty system. Inspired by
-mechanisms like Eltoo and [Hydra](https://hydra.family/head-protocol), CL could allow for the direct overriding of outdated states without imposing penalties. This method would simplify channel
-management by eliminating the need for revocation keys and reducing operational
-complexity.
+mechanisms like Eltoo and [Hydra](https://hydra.family/head-protocol), CL could
+allow for the direct overriding of outdated states without imposing penalties.
+This method would simplify channel management by eliminating the need for
+revocation keys and reducing operational complexity.
 
 ##### Optional Penalty System:
 
@@ -581,24 +586,36 @@ double hashing technique, embedding the secret within the HTLC script as
 `RIPEMD160(SHA256(secret))`. On the Cardano side, `RIPEMD160` is currently being
 integrated
 ([CIP-0127](https://github.com/cardano-foundation/CIPs/tree/master/CIP-0127)),
-but it is not necessary for these operations. Despite the fact that the script in commitment transaction in HTLCs outputs performs double hashing and stores the lock value in doubled hashed form, parties within the Layer 2 protocol exchange the lock using only the SHA256
-hash. This means that Cardano Lightning (CL) can adopt a compatible HTLC
-locking mechanism with BLN. This compatibility facilitates the potential for
-atomic swaps without additional bridges and supports cross-blockchain payments
-using a design similar to
+but it is not necessary for these operations. Despite the fact that the script
+in commitment transaction in HTLCs outputs performs double hashing and stores
+the lock value in doubled hashed form, parties within the Layer 2 protocol
+exchange the lock using only the SHA256 hash. This means that Cardano Lightning
+(CL) can adopt a compatible HTLC locking mechanism with BLN. This compatibility
+facilitates the potential for atomic swaps without additional bridges and
+supports cross-blockchain payments using a design similar to
 [Edge Nodes](https://docs.lightning.engineering/the-lightning-network/taproot-assets/edge-nodes),
 enhancing interoperability across different blockchain platforms.
 
 ## Conclusions
-In conclusion, the Bitcoin Lightning Network stands as a remarkable technological achievement, offering innovative solutions that enhance Bitcoin's scalability and transaction efficiency. As we look toward the future, the Cardano Lightning project emerges as an equally exciting and challenging endeavor. We cannot wait to bring this project to life and explore its positive impact on the Cardano Ecosystem.
+
+In conclusion, the Bitcoin Lightning Network stands as a remarkable
+technological achievement, offering innovative solutions that enhance Bitcoin's
+scalability and transaction efficiency. As we look toward the future, the
+Cardano Lightning project emerges as an equally exciting and challenging
+endeavor. We cannot wait to bring this project to life and explore its positive
+impact on the Cardano Ecosystem.
 
 ## Sources
 
-1. Andreas M. Antonopoulos, David A Harding, "Mastering Bitcoin: Programming the Open Blockchain" 3rd edition, O'Reilly Media, 2023
+1. Andreas M. Antonopoulos, David A Harding, "Mastering Bitcoin: Programming the
+   Open Blockchain" 3rd edition, O'Reilly Media, 2023
 
-2. Andreas M. Antonopoulos, Olaoluwa Osuntokun, Rene Pickhardt, "Mastering the Lightning Network: A Second Layer Blockchain Protocol for Instant Bitcoin Payments" 1st edition, O'Reilly Media, 2021
+2. Andreas M. Antonopoulos, Olaoluwa Osuntokun, Rene Pickhardt, "Mastering the
+   Lightning Network: A Second Layer Blockchain Protocol for Instant Bitcoin
+   Payments" 1st edition, O'Reilly Media, 2021
 
-3. Joseph Poonjoseph, Thaddeus Dryjarx, "The Bitcoin Lightning Network: Scalable Off-Chain Instant Payments", 2016
+3. Joseph Poonjoseph, Thaddeus Dryjarx, "The Bitcoin Lightning Network: Scalable
+   Off-Chain Instant Payments", 2016
 
 4. Basis of Lightning Technology (BOLT): https://github.com/lightning/bolts
 

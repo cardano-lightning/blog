@@ -1,5 +1,5 @@
 interface Window {
   CUSDIS?: {
-    setTheme(theme: 'dark' | 'light' | 'auto'): void
-  }
+    setTheme(theme: "dark" | "light" | "auto"): void;
+  };
 }

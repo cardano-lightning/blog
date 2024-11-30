@@ -1,4 +1,4 @@
-import * as colors from 'tailwindcss/colors';
+import * as colors from "tailwindcss/colors";
 
 // This is from docs nextra theme.
 // const makePrimaryColor =
@@ -12,19 +12,19 @@ import * as colors from 'tailwindcss/colors';
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  prefix: 'nx-',
+  prefix: "nx-",
   content: [
     "./theme/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./theme.config.jsx"
+    "./theme.config.jsx",
   ],
   theme: {
     colors: {
-      transparent: 'transparent',
-      current: 'currentColor',
-      black: '#000',
-      white: '#fff',
+      transparent: "transparent",
+      current: "currentColor",
+      black: "#000",
+      white: "#fff",
       gray: colors.gray,
       slate: colors.slate,
       neutral: colors.neutral,
@@ -46,53 +46,53 @@ export default {
       //   800: makePrimaryColor(32),
       //   900: makePrimaryColor(24)
       // }
-      primary: colors.blue
+      primary: colors.blue,
     },
     extend: {
       colors: {
-        dark: '#111'
+        dark: "#111",
       },
       fontFamily: {
-        'cardano': ['Trueno Semibold', 'sans-serif'],
+        cardano: ["Trueno Semibold", "sans-serif"],
       },
-      typography: theme => ({
+      typography: (theme) => ({
         dark: {
           css: {
-            color: theme('colors.gray[300]'),
-            '[class~="lead"]': { color: theme('colors.gray[400]') },
-            a: { color: theme('colors.gray[100]') },
-            strong: { color: theme('colors.gray[100]') },
-            'ul > li::before': { backgroundColor: theme('colors.gray[700]') },
-            hr: { borderColor: theme('colors.gray[800]') },
+            color: theme("colors.gray[300]"),
+            '[class~="lead"]': { color: theme("colors.gray[400]") },
+            a: { color: theme("colors.gray[100]") },
+            strong: { color: theme("colors.gray[100]") },
+            "ul > li::before": { backgroundColor: theme("colors.gray[700]") },
+            hr: { borderColor: theme("colors.gray[800]") },
             blockquote: {
-              color: theme('colors.gray[100]'),
-              borderLeftColor: theme('colors.gray[800]')
+              color: theme("colors.gray[100]"),
+              borderLeftColor: theme("colors.gray[800]"),
             },
-            h1: { color: theme('colors.gray[100]') },
-            h2: { color: theme('colors.gray[100]') },
-            h3: { color: theme('colors.gray[100]') },
-            h4: { color: theme('colors.gray[100]') },
-            code: { color: theme('colors.gray[100]') },
-            'a code': { color: theme('colors.gray[100]') },
+            h1: { color: theme("colors.gray[100]") },
+            h2: { color: theme("colors.gray[100]") },
+            h3: { color: theme("colors.gray[100]") },
+            h4: { color: theme("colors.gray[100]") },
+            code: { color: theme("colors.gray[100]") },
+            "a code": { color: theme("colors.gray[100]") },
             pre: {
-              color: theme('colors.gray[200]'),
-              backgroundColor: theme('colors.gray[800]')
+              color: theme("colors.gray[200]"),
+              backgroundColor: theme("colors.gray[800]"),
             },
             thead: {
-              color: theme('colors.gray[100]'),
-              borderBottomColor: theme('colors.gray[700]')
+              color: theme("colors.gray[100]"),
+              borderBottomColor: theme("colors.gray[700]"),
             },
-            'tbody tr': { borderBottomColor: theme('colors.gray[800]') }
-          }
-        }
-      })
-    }
+            "tbody tr": { borderBottomColor: theme("colors.gray[800]") },
+          },
+        },
+      }),
+    },
   },
   variants: {
     extend: {
-      typography: ['dark']
-    }
+      typography: ["dark"],
+    },
   },
-  plugins: [require('@tailwindcss/typography')],
-  darkMode: ['class', 'html[class~="dark"]']
-}
+  plugins: [require("@tailwindcss/typography")],
+  darkMode: ["class", 'html[class~="dark"]'],
+};

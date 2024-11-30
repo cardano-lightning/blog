@@ -1,13 +1,13 @@
-const withNextra = require('nextra')({
+const withNextra = require("nextra")({
   // theme: 'nextra-theme-blog',
-  theme: './theme/index.tsx',
-  themeConfig: './theme.config.jsx',
-})
+  theme: "./theme/index.tsx",
+  themeConfig: "./theme.config.jsx",
+});
 
 module.exports = withNextra({
   images: {
-    unoptimized: true
+    unoptimized: true,
   },
-  output: 'export',
+  output: "export",
   trailingSlash: true,
 });

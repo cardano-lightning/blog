@@ -1,10 +1,10 @@
-import { defineConfig } from 'tsup'
+import { defineConfig } from "tsup";
 
 export default defineConfig({
-  entry: ['theme/index.tsx', 'theme/cusdis.tsx', 'theme/tags.tsx'],
-  format: 'esm',
+  entry: ["theme/index.tsx", "theme/cusdis.tsx", "theme/tags.tsx"],
+  format: "esm",
   dts: true,
-  name: 'cardano-lightning-network-theme',
-  outExtension: () => ({ js: '.js' }),
-  external: ['nextra']
-})
+  name: "cardano-lightning-network-theme",
+  outExtension: () => ({ js: ".js" }),
+  external: ["nextra"],
+});

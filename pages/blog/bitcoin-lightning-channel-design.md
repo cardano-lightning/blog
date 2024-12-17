@@ -154,11 +154,11 @@ because it affects if and how big payment can be routed through the network
 without the need for splitting and transferring it using much more involved
 multi path payment.
 
-Cardano is (generally) faster and cheaper than Bitcoin. Thus, to match BLN on cost and speed, CL may not need to pay the same level of priority to tx fee optimization. At the baseline protocol level we probably don't have to necessarily compresses every channel L1 operation into a single
+Cardano is (generally) faster and cheaper than Bitcoin. Thus, to match BLN on cost and speed, CL may not need to pay the same level of priority to tx fee optimization. At the baseline protocol level we probably don't have to necessarily compress every channel L1 operation into a single
 transaction.
 
 We can of course enable more efficient execution strategies based on muti-sig
-transactions and rely as BLN on a full off-chain consensus bewteen partners. As
+transactions and rely as BLN on a full off-chain consensus between partners. As
 we will learn in a moment this seemingly optimal multi-sig route can impose
 inflexibility which can lead to actually more transactions in many contexts!
 
@@ -252,7 +252,7 @@ between channel partners.
 On Cardano, the CL protocol can abstract away from transaction-level
 representations of channel state, allowing complete decoupling from transaction
 fees. This capability will be of course limited to non-multisig protocol flows.
-Unfortunately, the current fairness model limits the reliability of laveraging
+Unfortunately, the current fairness model limits the reliability of leveraging
 that possible feature. Looking forward, this flexibility could allow liquidity
 providers to manage risks more effectively, reducing the hazards associated with
 large HTLCs.
@@ -455,7 +455,7 @@ which allows both parties to contribute the initial funds. This development was
 relatively slow because it required careful design of interactive transaction
 buildup of that funding multi-sig transaction. This interative protocol
 constructs transaction piece by piece by adding single outputs and inputs from
-both partners. Actually even more lighting users can be involved in this buildup
+both partners. Actually even more lightning users can be involved in this buildup
 to coordinate funding of multiple channels at the same time.
 
 On Cardano, channel funding can potentially be handled more flexibly. Starting

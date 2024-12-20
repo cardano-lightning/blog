@@ -12,7 +12,8 @@ const layoutMap = {
   post: ArticleLayout,
   page: PageLayout,
   posts: PostsLayout,
-  tag: PostsLayout
+  tag: PostsLayout,
+  index: PageLayout,
 }
 
 const BlogLayout = ({

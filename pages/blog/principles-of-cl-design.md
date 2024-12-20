@@ -208,6 +208,11 @@ understand how to interface with the code. Again - not to be justify any
 obscurity of design or code, but a validator is not simply just another library
 they'd be interfacing with. The stakes are too high. They must read the spec.
 
+We suffer less from docs/code divergence than is experienced in "normal" development. 
+For the same reason that we have un-patch-ablity we have a fixed feature set. 
+It is in evolving software and its code base, by adding new features or modifying existing ones, 
+when code diverges from docs. 
+
 A spec helps expel ambiguity early. It provides an opportunity to check that
 everyone is on the same page before any lines of code are written, and without
 having to unpick lines of code after the fact.

@@ -62,8 +62,6 @@ with your visa card, then you're the consumer, the cafe is the merchant, and
 visa is the payment facilitator. The needs of these participants is distinct,
 and thus the CL node they run will be distinct.
 
-To understand more about our thinking see our blog post [[TODO :: FIXME]]
-
 ### Cirrus v0
 
 Cirrus is a super lightweight CL targeting end user/ consumers running the node

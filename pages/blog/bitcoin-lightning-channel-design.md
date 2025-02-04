@@ -42,8 +42,8 @@ us know on our GitHub issue tracker:
 BLN is not a static project—it is under active development by several
 independent entities. This makes it challenging to say with confidence "BLN
 can't do X". For example, splicing—allowing for channel funds to be altered
-midlife—did not exist in the original version of BLN but is now in the final
-stages [^bln-splicing-pr].
+midlife—did not exist in the original version of BLN but is now in [the final
+stages](https://github.com/lightning/bolts/pull/1160).
 
 Furthermore, saying "BLN can't do X due to the limitations of Bitcoin script and
 L1" often joins more dots than the evidence supports. BLN accomplishes an
@@ -337,8 +337,8 @@ and Plutus, respectively. These languages differ on two fundamental levels:
   execute more complex computations, including loops and recursion. This
   capability allows for more elaborate program designs. However, the complexity
   of Turing-complete programs makes them more challenging to analyze. In
-  contrast, Bitcoin Script is not Turing complete [^1], limiting its ability to
-  perform such complex operations.
+  contrast, Bitcoin Script is not Turing complete (as discussed in "Mastering Bitcoin," page 144, section "Turing Incompleteness")
+  , limiting its ability to perform such complex operations.
 
 - **Operational Context**: The operational context in which validators function
   also varies significantly between the two. Bitcoin validators, which oversee
@@ -532,7 +532,7 @@ Bitcoin transactions, such as a new signature flag.
 
 ##### Benefits of Eltoo:
 
-Paraphrasing the benefits listed in the Eltoo paper [^5]:
+Paraphrasing the benefits listed in the Eltoo paper:
 
 - **Reduced Storage Requirements**: Eliminates the need to store revocation
   secrets.

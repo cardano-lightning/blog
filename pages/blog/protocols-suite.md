@@ -21,7 +21,7 @@ The Casual Spender wants to make payments easily. They need a simple mobile/desk
 
 The High-Throughput Payment Gateway - a payment processors which allow other users to transfer liquidity - has completely different needs. It is a node which forms a backbone of the network together with other similar nodes. They mediate payments for many customers and merchants. They need to handle large volumes of payments in both directions (from the neighbour or to it), maintain good liquidity (keep money in channels with high volume of traffic), and optimize for efficiency (like processing and communication speed, batched L1 operations etc.). They are willing to run more demanding software if it brings operational benefits. Their profit relies on the liquidity which they provide and its movement (they cut fee per the amount of money routed through them).
 
-Merchants form a third category. There is a likely a spectrum of feature sets within this category, with some wanting only the simplest set-up such as unidirectional channels to receive payment, while others wanting bidirectionality, perhaps to pay their suppliers so we won't distinguish them into a separate category there.
+Merchants form a third category. There is a likely a spectrum of feature sets within this category, with some wanting only the simplest set-up such as unidirectional channels to receive payment, while others wanting bi directionality, perhaps to pay their suppliers so we won't distinguish them into a separate category there.
 
 These two strategies have fundamentally different requirements.
 
@@ -52,31 +52,10 @@ This makes them especially useful between routing nodes, where traffic can natur
 
 However, this flexibility comes at a cost. Both parties have liquidity at stake - the final settlement is not one side story any more because Alice can not just present to the on-chain cashier cheques from Bob and right away cash them out. Bob should be able to present cheques which he received from Alice as well. This possible dispute (it is optional because in a full consensus happy path it could be one shot resolution) means an extra delay requirement and necessity to monitor the chain more closely and in a more reliable way (ideally using a full node with own chain indexer etc.).
 
-<!--
-Properties:
-* Funds can flow freely in both directions
-* Supports atomic refunds and cancellations using shared secrets
-* Channels can stay open much longer as payments in opposite directions can naturally balance each other
-* Requires both parties to stay synchronized and monitor the chain
-* More complex security model — both sides must be ready to respond during the settlement window
--->
-
 ## Other flavors
 
 There are even more possible categories of  lightning channels which can be distinguished based on compostability (a prominent example is https://subbit.xyz by @waalge) or multi token support (our protocols support different tokens but are mono asset - either USDM, ADA or some other **specific** token can flow through a particular channel). We want to stop here for now though as we think that the two flavours described above are the most important ones.
 
 After seeing these differences, our design philosophy becomes clear.
 Instead of forcing everyone into one universal bidirectional protocol, we are sticking at the moment to two protocols. Each flavour is optimized for specific user needs — from simple spending to high-throughput routing. We believe this approach brings significant benefits in simplicity, performance, and ultimately adoption. The time will tell if we are right.
-
-## WIP: More Resources and Our Progress
-<!-- Plan:
-* Summarize the current state of the konduit node.
-* Provide links and info to the two Konduit and Ferret apps.
-* Mention CF involvement.
-
-
-> If you want to learn more and track our work please check out our [github](https://github.com/orgs/cardano-lightning/repositories) repos:
-> 
-> You can find on the cardano-lightning org repos (smart contracts, backend, mobile app) which implement `konduit` protocol which bridges to the Bitcoin Lightning Network but is also unidirectional on the Cardano side at the moment and is the baseline for a further development of the fully fledged multi-node hopping as well.
--->
 

@@ -12,17 +12,47 @@ author: paluh
 > - Outline the procedure for the thread indexing 
 -
 
-## What is Kupo?
+## Kupo indexer
 
-### UTxO Centric Indexer
+### UTxO centric
 
-Kupo is a fast and lightweight indexer. Its data model focuses on UTxOs and not on transactions themselves at the moment. What I mean by that is that the [main query data endpoint](https://cardanosolutions.github.io/kupo/#operation/getAllMatches) returns UTxOs and not transactions and there is no way to get the transactions themselves.
-This can be problematic whenever DApp wants to access detailed minting context redeemers or some other transaction level information (ceritificates registration, governance actions etc.).
+Kupo is a fast and lightweight indexer. Its data model is built around UTxOs and not on transactions themselves. What I mean by that is that the [main query data endpoint](https://cardanosolutions.github.io/kupo/#operation/getAllMatches) returns UTxOs and not transactions and there is no way to get the transactions by desing - the [internal DB](FIXME) does not store them.
+This can be problematic whenever DApp wants to access minting redeemers or some other transaction level information (ceritificates registration, governance actions etc.). One of our protocols actually uses minting policy as a transaction level validator. We will see how this plays out in our case.
+
+### Easily configurable
+
+Kupo can be light and fast because you can set it up so it stores only those UTxOs which you are interested in. It decides which output to keep and update when it is spent using pattern matching on dierent parts of the UTxO. You can predefine and even manage them dynamically.
+
+### Easily accesible
+
+Kupo exposes rather minimialistic REST API. Its power lays again in the usage of pattern matching. Now the patterns can be used to filter the results not only by the parts of the stored UTxOs but also by creation or spending time. There are many clients implemented.
+
+### Well documented
+
+Kupo comes with an [excellent documentation](https://cardanosolutions.github.io/kupo/) so we won't be trying to repeat it here but we will try to outline the pieces which are relevant for our core use case - smart contract thread indexing.
+
+### Nicely coded
+
+Additional plus for Kupo is the source code itself. I co-authored and explored different indexers across the Cardano ecosystem (Marlowe's, plutus-apps, sync-db and some internal ones) and I like Kupo's source the most.  It is "simple" and clean Haskell. Additionally it exposes itself as a library so it can be used as a baseline or customization which we will discuss in more details as well.
+
+## Threading patterns
+
+I will shortly picture two distinct "contrat instance threading" strategies which we use in our on-chain protocols. Why we used to different styles? Probably to gain better feel how they work in practice across the whole our stack. We will summarize our experience in a separate installement.
+
+One common design assumption which we made is that cardano lightning channel processing should be optimized for batched execution. The reasoning shortly here is that the intermediary nodes (payment operators) who form a backbone of the CL network require efficient liquidity management across many channels.
+This choice really transalates to a requirement that we want to be able to execute efficiently steps across different contract instances in one Cardano transaction. We did some preliminary measurements and a sim
+
+[diagram - 
 
 
-### Indexing the DApp State
+### Thread token
 
-Core flexibility of this indexer is expressed through pattern matching on different UTxOs. The set of patterns can be dynamically managed but in our smart contract case you can imagine that the baseline filter will by just a hash of that smart contract - UTxOs which are locked by that smart contract are possible suspects - they could but don't have to be our instances.
+This approach uses a unique token which marks the input to the output 
+
+> Section from somewhere else
+> The current cardano lightning protocols use transaction level validation through minting policy or input validator delegation but the critical piece for thread identication is the actual arrangement of the inputs and outputs or presence of speciic tokens across them. I will describe this in more details below.
+
+> In the case of both of our contracts we can stick to a static pattern and filter outputs which are locked at our knonw smart contract address (we will really look at the payment part of the address which should contain hash of our smartcontract(s)). UTxOs identified by such a filter are **possible** suspects - they could but don't have to be our instance
 
 ### Searching For Funding UTxOs
 
@@ -30,7 +60,6 @@ Beside instance tracking we need to create and fund transactions. In order to fi
 In theory you could try to use `cardano-node` [directly] which exposes a querying API for the UTxO set but it is not intended to be used that way. Please note that the UTxO set maintained by the node is not indexed by address and in order to find that kind of subset of UTxOs requires a linear scan of the whole UTxO which in the context of UTxO-HD (UTxO storage on the hard drive) can be even more 
 expensive.
 
-Kupo comes with an [excellent documentation](https://cardanosolutions.github.io/kupo/) so we won't be trying to repeat it here but we will try to outline the pieces which are relevant for our core use case - smart contract thread indexing.
 
 > Move this "somewhere":
 > malicious actor could create UTxOs at the smart contract address which are not valid or mimic existing instances to mislead the app

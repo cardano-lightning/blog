@@ -6,6 +6,7 @@ author: paluh
 ---
 
 > Plan:
+> - 
 > - What is Kupo.
 >   - Indexing.
 >   - Current UTxO set querying.
@@ -35,24 +36,6 @@ Kupo comes with an [excellent documentation](https://cardanosolutions.github.io/
 
 Additional plus for Kupo is the source code itself. I co-authored and explored different indexers across the Cardano ecosystem (Marlowe's, plutus-apps, sync-db and some internal ones) and I like Kupo's source the most.  It is "simple" and clean Haskell. Additionally it exposes itself as a library so it can be used as a baseline or customization which we will discuss in more details as well.
 
-## Threading patterns
-
-I will shortly picture two distinct "contrat instance threading" strategies which we use in our on-chain protocols. Why we used to different styles? Probably to gain better feel how they work in practice across the whole our stack. We will summarize our experience in a separate installement.
-
-One common design assumption which we made is that cardano lightning channel processing should be optimized for batched execution. The reasoning shortly here is that the intermediary nodes (payment operators) who form a backbone of the CL network require efficient liquidity management across many channels.
-This choice really transalates to a requirement that we want to be able to execute efficiently steps across different contract instances in one Cardano transaction. We did some preliminary measurements and a sim
-
-[diagram - 
-
-
-### Thread token
-
-This approach uses a unique token which marks the input to the output 
-
-> Section from somewhere else
-> The current cardano lightning protocols use transaction level validation through minting policy or input validator delegation but the critical piece for thread identication is the actual arrangement of the inputs and outputs or presence of speciic tokens across them. I will describe this in more details below.
-
-> In the case of both of our contracts we can stick to a static pattern and filter outputs which are locked at our knonw smart contract address (we will really look at the payment part of the address which should contain hash of our smartcontract(s)). UTxOs identified by such a filter are **possible** suspects - they could but don't have to be our instance
 
 ### Searching For Funding UTxOs
 

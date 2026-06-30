@@ -1,0 +1,90 @@
+digraph Script_Execution_Thread {
+  rankdir=TD;
+  graph [pad="0.02", nodesep="0.6", ranksep="0.5"];
+  node [shape=rect, style="filled", fillcolor="#f9f9f9", fontname="Courier New", fontsize="10"];
+  edge [arrowhead=none, headport="n", tailport="s", color="#aaa", fontname="Courier New", fontsize="10"];
+
+    D2_ScriptThreadTx1InputTx [shape=point];
+    D2_ScriptThreadTx1InputTx -> D2_ScriptThreadTx1Input;
+    D2_ScriptThreadTx1Input [label=<
+      <TABLE CELLSPACING="0" CELLPADDING="4" BORDER="0" CELLBORDER="1" color="#aaa">
+        <TR>
+          <TD colspan="2" align="center"><b>Tx Input</b></TD>
+        </TR>
+        <TR>
+          <TD align="left"><b>address</b></TD>
+          <TD align="left" balign="left">Contract script X</TD>
+        </TR>
+        <TR>
+          <TD align="left"><b>datum</b></TD>
+          <TD align="left" balign="left">Contract state S</TD>
+        </TR>
+        <TR>
+          <TD align="left"><b>value</b></TD>
+          <TD align="left" balign="left">Assets locked in the contract</TD>
+        </TR>
+      </TABLE>
+    > shape="plain" border="1" color="#000"]
+    D2_ScriptThreadTx1Input -> D2_ScriptThreadTx2;
+
+
+    D2_ScriptThreadTx2ExtraInput1 [shape=point];
+    D2_ScriptThreadTx2ExtraInput1 -> D2_ScriptThreadTx2;
+
+    D2_ScriptThreadTx2ExtraInput2 [shape=point];
+    D2_ScriptThreadTx2ExtraInput2 -> D2_ScriptThreadTx2;
+
+    // --- New for D2 ---
+    D2_ScriptThreadTx2 [label=<
+      <TABLE CELLSPACING="0" CELLPADDING="4" BORDER="1" CELLBORDER="0" style="rounded" color="#aaa">
+        <TR>
+          <TD align="center"><b>Tx</b></TD>
+        </TR>
+        <TR>
+          <TD cellpadding="0" align="left">
+            <TABLE CELLSPACING="0" CELLPADDING="4" BORDER="0" CELLBORDER="1" style="rounded" color="#aaa">
+              <TR>
+                <TD align="left" colspan="2">Script X is executed.<br />It checks for continuing output and <br />valid new state and value in it.</TD>
+              </TR>
+              <TR>
+                <TD align="left"><b>redeemer</b> for input 0</TD>
+                <TD align="left" balign="left">Action Z</TD>
+              </TR>
+            </TABLE>
+          </TD>
+        </TR>
+        <TR>
+          <TD> </TD>
+        </TR>
+      </TABLE>
+    > color="#aaa" shape="plain" style="filled, rounded"];
+
+    D2_ScriptThreadTx2Output [label=<
+      <TABLE CELLSPACING="0" CELLPADDING="4" BORDER="0" CELLBORDER="1" color="#aaa">
+        <TR>
+          <TD colspan="2" align="center"><b>Tx Output</b></TD>
+        </TR>
+        <TR>
+          <TD align="left"><b>address</b></TD>
+          <TD align="left" balign="left">Contract script X</TD>
+        </TR>
+        <TR>
+          <TD align="left"><b>datum</b></TD>
+          <TD align="left" balign="left">Contract state S' after<br />Action Z</TD>
+        </TR>
+        <TR>
+          <TD align="left"><b>value</b></TD>
+          <TD align="left" balign="left">Assets locked in the contract<br />after Action Z</TD>
+        </TR>
+      </TABLE>
+    > shape="plain" border="1" color="#000"]
+
+    D2_ScriptThreadTx2 -> D2_ScriptThreadTx2Output;
+
+    D2_ScriptThreadTx2ExtraOutput1 [shape=point];
+    D2_ScriptThreadTx2 -> D2_ScriptThreadTx2ExtraOutput1;
+
+
+    D2_ScriptThreadTx [shape=point];
+    D2_ScriptThreadTx2Output -> D2_ScriptThreadTx;
+}

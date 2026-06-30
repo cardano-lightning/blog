@@ -1,0 +1,97 @@
+---
+title: "Cardano dApp 101.2: Indexing with Kupo"
+description: "Is Kupo good enough for your dApp. Based on a true story of Cardano Lightning nodes."
+draft: true
+author: paluh
+---
+
+> Plan:
+> - 
+> - What is Kupo.
+>   - Indexing.
+>   - Current UTxO set querying.
+> - Outline the procedure for the thread indexing 
+-
+
+## Kupo indexer
+
+### UTxO centric
+
+Kupo is a fast and lightweight indexer. Its data model is built around UTxOs and not on transactions themselves. What I mean by that is that the [main query data endpoint](https://cardanosolutions.github.io/kupo/#operation/getAllMatches) returns UTxOs and not transactions and there is no way to get the transactions by desing - the [internal DB](FIXME) does not store them.
+This can be problematic whenever DApp wants to access minting redeemers or some other transaction level information (ceritificates registration, governance actions etc.). One of our protocols actually uses minting policy as a transaction level validator. We will see how this plays out in our case.
+
+### Easily configurable
+
+Kupo can be light and fast because you can set it up so it stores only those UTxOs which you are interested in. It decides which output to keep and update when it is spent using pattern matching on dierent parts of the UTxO. You can predefine and even manage them dynamically.
+
+### Easily accesible
+
+Kupo exposes rather minimialistic REST API. Its power lays again in the usage of pattern matching. Now the patterns can be used to filter the results not only by the parts of the stored UTxOs but also by creation or spending time. There are many clients implemented.
+
+### Well documented
+
+Kupo comes with an [excellent documentation](https://cardanosolutions.github.io/kupo/) so we won't be trying to repeat it here but we will try to outline the pieces which are relevant for our core use case - smart contract thread indexing.
+
+### Nicely coded
+
+Additional plus for Kupo is the source code itself. I co-authored and explored different indexers across the Cardano ecosystem (Marlowe's, plutus-apps, sync-db and some internal ones) and I like Kupo's source the most.  It is "simple" and clean Haskell. Additionally it exposes itself as a library so it can be used as a baseline or customization which we will discuss in more details as well.
+
+
+### Searching For Funding UTxOs
+
+Beside instance tracking we need to create and fund transactions. In order to find present UTxOs for an arbitrary address we need an unfiltered set of UTxOs but we are interested in the real ones not the historical ones ("spent unspent outputs" :-P).
+In theory you could try to use `cardano-node` [directly] which exposes a querying API for the UTxO set but it is not intended to be used that way. Please note that the UTxO set maintained by the node is not indexed by address and in order to find that kind of subset of UTxOs requires a linear scan of the whole UTxO which in the context of UTxO-HD (UTxO storage on the hard drive) can be even more 
+expensive.
+
+
+> Move this "somewhere":
+> malicious actor could create UTxOs at the smart contract address which are not valid or mimic existing instances to mislead the app
+
+
+
+### A Closer Look at our Thread Indexing Needs
+
+but our both our protocols are transaction centric to facilitate batching. We still want to explore that possibility before we move to a direct chain follower implementations.
+
+What transaction centric really means in our case is that we use transaction level validator which goes over the transaction and validates it as a set of cardano-lightning smart contract instances.
+
+
+## Indexing The Thread
+
+Our tech choices:
+
+* [ ] SQLite for the storage.
+
+* [ ] TypeScript for coding.
+
+
+Requirements:
+
+* [ ] Expose the thread information in domain specific way (not just UTxOs)
+
+* [ ] Connect domain information to the maturity etc. to facilitate interaction and UX.
+
+* [ ] Handle rollbacks and keep the thread information consistent.
+
+
+Let's y start with the last requirement - rollbacks. On the storage level we will approach this through a simple SQL `ON DELETE CASCADE` approach meaning we will have a table `block`:
+
+```sql
+CREATE TABLE block (
+  header_hash BLOB NOT NULL,
+  block_no INTEGER NOT NULL,
+  slot_no INTEGER NOT NULL,
+  PRIMARY KEY (slot_no)
+);
+```
+
+All our domain level information will be connected to the block. 
+
+```sql
+CREATE TABLE thread_output (
+  block_header_hash BLOB NOT NULL,
+
+)
+```
+
+

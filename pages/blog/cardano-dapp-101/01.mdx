@@ -1,13 +1,13 @@
 ---
-title: "Cardano 101: Tracking smart contract state"
+title: "Cardano dApp 101.1: Tracking smart contract state"
 date: 2026/06/30
-description: "What and how to track when you deal with a smart contract on Cardano. Based on a true story of Cardano Lightning nodes."
+description: "What you need to track when you implement a dApp on Cardano. Based on a true story of Cardano Lightning nodes."
 author: paluh
 ---
 
 ## Introduction
 
-As we are working on two flavours of CL (Cardano Lightning) protocols and implementing and designing three different types of CL nodes we are facing the problem of the on-chain state tracking from a few different perspectives. In this short series I will try to define our specific indexing needs and outline the solutions which we use or plan to use. I believe that our requirements are somewhat representative to a broad class of DApps so hopefully you will find them useful.
+As we are working on two flavours of CL (Cardano Lightning) protocols and implementing and designing three different types of CL nodes we are facing the problem of the on-chain state tracking from a few different perspectives. In this short series I will try to define our specific indexing needs and outline the solutions which we use or plan to use. I believe that our requirements are somewhat representative to a broad class of dApps so hopefully you will find them useful.
 Along the way I will do some recap of the basics so don't worry if you are new to the Cardano or EUTxO model. Some examples will be provided also in a `TypeScript` and `SQL` form but only to provide another angle. If you don't know these languages, you can just skip the code snippets altogether and still get the idea.
 
 ### The plan
@@ -73,7 +73,7 @@ From the smart contract perspective a single step is like a method call (or stat
 
 ### Tracking an instance
 
-What is usually needed from that kind of DApp perspective is the current state (datum + assets) of the contract on the chain so the appropriate party can choose the next step when needed and execute it. This simple assumption could lead to a design which only needs to query the current UTxOs snapshot instead of the full thread history. With snapshots the picture can become more murky when we consider rollback recovery and our general understanding of the state maturity. Disambiguation of the thread from some malicious UTxO "mimics" can be also a bit tricky when we are working with the snapshots alone.
+What is usually needed from that kind of dApp perspective is the current state (datum + assets) of the contract on the chain so the appropriate party can choose the next step when needed and execute it. This simple assumption could lead to a design which only needs to query the current UTxOs snapshot instead of the full thread history. With snapshots the picture can become more murky when we consider rollback recovery and our general understanding of the state maturity. Disambiguation of the thread from some malicious UTxO "mimics" can be also a bit tricky when we are working with the snapshots alone.
 
 From my experience it is easier to stick to a more honest thread representation of the on-chain state and derive from it on the app level the current domain level situation. That extra tx thread context allows us to gain better understanding of what is really happening. We can do more informed decisions when to execute the next action, retry it or repeat it all together. We can also present to the user or system admin the tx history which gives more context to the rollbacks which lead to unsuccessful interactions attempts.
 
@@ -171,10 +171,10 @@ Cardano Lightning unidirectional channels delegate validation to the first spend
 
 ### Transaction Building
 
-In addition to indexing, the DApp should facilitate user interaction with the smart contract. It should be able to build the next transaction which correctly extends the current thread of execution.
+In addition to indexing, the dApp should facilitate user interaction with the smart contract. It should be able to build the next transaction which correctly extends the current thread of execution.
 
 It is never enough to provide the smart contract input to the transaction because it can not cover the required transaction fees (it can not be used as a collateral input - it is a ledger rule) and of course it can not cover new deposits to the smart contracts as well.
-The system has to be able to identify UTxOs which can be used to cover that expenses from the "user's wallet". It is usually impossible to know in advance which addresses the user will use to fund the transaction, so in the most generic case the DApp should be able to query any address from the current full UTxO set or use user's wallet to provide a funding UTxO pool.
+The system has to be able to identify UTxOs which can be used to cover that expenses from the "user's wallet". It is usually impossible to know in advance which addresses the user will use to fund the transaction, so in the most generic case the dApp should be able to query any address from the current full UTxO set or use user's wallet to provide a funding UTxO pool.
 
 ### Transaction Submission
 
@@ -191,5 +191,5 @@ It is. Your submission or resubmission logic should react to the on-chain change
 
 ## What's next?
 
-In the upcoming parts we will discuss in more depth two strategies of on-chain state tracking relevant to two different types of "users": backend system with some automatic administrative behaviours and user facing DApp without any extra backend.
+In the upcoming parts we will discuss in more depth two strategies of on-chain state tracking relevant to two different types of "users": backend system with some automatic administrative behaviours and user facing dApp without any extra backend.
 

@@ -1,6 +1,6 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 @layer base {
   @font-face {
@@ -17,7 +17,6 @@
 @import 'nextra/styles/steps.css';
 @import 'nextra/styles/cards.css';
 */
-
 
 html {
   @apply nx-scroll-pt-5;

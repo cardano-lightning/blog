@@ -590,6 +590,7 @@ using a design similar to
 enhancing interoperability across different blockchain platforms.
 
 ## Conclusions
+
 In conclusion, the Bitcoin Lightning Network stands as a remarkable technological achievement, offering innovative solutions that enhance Bitcoin's scalability and transaction efficiency. As we look toward the future, the Cardano Lightning project emerges as an equally exciting and challenging endeavor. We cannot wait to bring this project to life and explore its positive impact on the Cardano Ecosystem.
 
 ## Sources

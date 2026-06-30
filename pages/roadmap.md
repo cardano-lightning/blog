@@ -4,7 +4,7 @@ author: "@waalge"
 type: page
 ---
 
-Welcome the to CL Roadmap 🛣️  aka our TODO list!
+Welcome the to CL Roadmap 🛣️ aka our TODO list!
 
 This is a living document. Dates will be added as soon as funding is secured 😉
 (get in touch if you're interested).

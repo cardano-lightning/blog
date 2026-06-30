@@ -1,11 +1,11 @@
 /** @type {import('postcss').Postcss} */
 export default {
   plugins: {
-    'postcss-import': {},
-    'tailwindcss/nesting': {},
+    "postcss-import": {},
+    "tailwindcss/nesting": {},
     tailwindcss: {},
-    'postcss-lightningcss': {
-      browsers: '>= .25%'
-    }
-  }
-}
+    "postcss-lightningcss": {
+      browsers: ">= .25%",
+    },
+  },
+};

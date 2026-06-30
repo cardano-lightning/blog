@@ -1,17 +1,17 @@
-import Link from 'next/link'
-import type { ReactElement } from 'react'
-import { useBlogContext } from './blog-context'
-import ThemeSwitch from './theme-switch'
-import { split } from './utils/get-tags'
-import { getParent } from './utils/parent'
+import Link from "next/link";
+import type { ReactElement } from "react";
+import { useBlogContext } from "./blog-context";
+import ThemeSwitch from "./theme-switch";
+import { split } from "./utils/get-tags";
+import { getParent } from "./utils/parent";
 
 export default function Meta(): ReactElement {
-  const { opts, config } = useBlogContext()
-  const { author, date, tag } = opts.frontMatter
-  const { back } = getParent({ opts, config })
-  const tags = tag ? split(tag) : []
+  const { opts, config } = useBlogContext();
+  const { author, date, tag } = opts.frontMatter;
+  const { back } = getParent({ opts, config });
+  const tags = tag ? split(tag) : [];
 
-  const tagsEl = tags.map(t => (
+  const tagsEl = tags.map((t) => (
     <Link key={t} href="/tags/[tag]" as={`/tags/${t}`} passHref legacyBehavior>
       <a
         className="
@@ -33,21 +33,21 @@ export default function Meta(): ReactElement {
         {t}
       </a>
     </Link>
-  ))
+  ));
 
-  const readingTime = opts.readingTime?.text
-  const dateObj = date ? new Date(date) : null
+  const readingTime = opts.readingTime?.text;
+  const dateObj = date ? new Date(date) : null;
   return (
     <div
       className={
-        'nx-mb-8 nx-flex nx-gap-3 ' +
-        (readingTime ? 'nx-items-start' : 'nx-items-center')
+        "nx-mb-8 nx-flex nx-gap-3 " +
+        (readingTime ? "nx-items-start" : "nx-items-center")
       }
     >
       <div className="nx-grow dark:nx-text-gray-400 nx-text-gray-600">
         <div className="nx-not-prose nx-flex nx-flex-wrap nx-items-center nx-gap-1">
           {author}
-          {author && date && ','}
+          {author && date && ","}
           {dateObj && (
             <time dateTime={dateObj.toISOString()}>
               {config.dateFormatter?.(dateObj) || dateObj.toDateString()}
@@ -72,5 +72,5 @@ export default function Meta(): ReactElement {
         )}
       </div>
     </div>
-  )
+  );
 }

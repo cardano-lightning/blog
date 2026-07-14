@@ -37,6 +37,9 @@ article img {
 h1 {
   letter-spacing: -0.03em;
 }
+.nx-prose {
+  max-width: none;
+}
 
 .nx-prose code {
   &:before,
